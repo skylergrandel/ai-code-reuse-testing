@@ -2,7 +2,7 @@ import openai
 import json
 
 # Your OpenAI API key here
-api_key = "Your API key"
+api_key = "Your API Key Here"
 
 # Initialize the OpenAI API client
 openai.api_key = api_key
@@ -23,7 +23,7 @@ for i, problem in enumerate(problems):
     test_suite = problem['test_suite']
     
     # Create the prompt for GPT-3.5-turbo
-    system_prompt = "You will act as a code generator. Generate Python code based on the function descriptions and prototypes provided. The output should be executable Python code only, without comments or extra text."
+    system_prompt = "You will act as a code generator. Generate Python code based on the function descriptions and prototypes provided. Assume that all functions are located in the same file. The output should be executable Python code only, without comments or extra text."
     prompt = f"{base_function_desc}\n\nPrototype: {base_function_prototype}\n\n{child_function_desc}\n\nPrototype: {child_function_prototype}"
     
     # Make the API call to get the code

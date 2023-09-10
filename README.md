@@ -21,6 +21,19 @@ This repository contains a Python script and a JSON file designed to assess the 
 
 5. Finally, the script calculates and prints out the total score, which serves as the assessment of the AI model's code reuse capabilities.
 
+## Notes about prompting
+There are a few interesting things to note about the way that GPT-3.5-turbo is prompted. 
+
+- We explicitly do not mention code reuse in the prompts because we want to test GPT's ability to adhere to good programming practices without explicit instruction (modeling a software engineer using AI to help program in practice). 
+
+- We explicitly instruct GPT not to import any libraries, because many problems could be solved without effort or code reuse using libraries. 
+
+- Lots of work went into finding the best prompt to ensure that GPT only returns executable code without any additional words so that the code can be automatically tested. 
+
+- We include function prototypes in the prompt to ensure that the testing scripts can be run correctly
+
+- When given these specific prompting instructions, our initial results indicated that GPT was very bad at code reuse. However, changing the prompt from "Generate Python code..." to "Generate a Python file..." helped to encourage code reuse by implying that all of the code GPT generated would be included in a single file, allowing code reuse.
+
 ## How to Run the Script
 
 1. Install the OpenAI Python package by running `pip install openai`.
