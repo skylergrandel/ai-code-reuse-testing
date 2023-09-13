@@ -4,699 +4,699 @@
         "base_function_prototype": "def factorial_1(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_1(a, b):",
-        "test_suite": "\ndef test_functions_1():\n    score = 0\n    if factorial_1(5) == 120:\n        score += 4\n    if factorial_of_sum_1(2, 2) == factorial_1(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_1' in globals().get('factorial_of_sum_1').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_1():\n    score = 0\n    code_reuse_score = 0\n    if factorial_1(5) == 120:\n        score += 4\n    if factorial_of_sum_1(2, 2) == factorial_1(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_1' in globals().get('factorial_of_sum_1').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_2(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_2(s):",
-        "test_suite": "\ndef test_functions_2():\n    score = 0\n    if string_reverse_2('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_2('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_2' in globals().get('reverse_and_uppercase_2').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_2():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_2('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_2('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_2' in globals().get('reverse_and_uppercase_2').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_3(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_3(a, b):",
-        "test_suite": "\ndef test_functions_3():\n    score = 0\n    if factorial_3(5) == 120:\n        score += 4\n    if factorial_of_sum_3(1, 5) == factorial_3(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_3' in globals().get('factorial_of_sum_3').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_3():\n    score = 0\n    code_reuse_score = 0\n    if factorial_3(5) == 120:\n        score += 4\n    if factorial_of_sum_3(1, 5) == factorial_3(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_3' in globals().get('factorial_of_sum_3').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_4(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_4(numbers):",
-        "test_suite": "\ndef test_functions_4():\n    score = 0\n    if sum_of_squares_4([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_4([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_4' in globals().get('sum_of_squares_of_evens_4').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_4():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_4([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_4([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_4' in globals().get('sum_of_squares_of_evens_4').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_5(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_5(numbers):",
-        "test_suite": "\ndef test_functions_5():\n    score = 0\n    if sum_of_squares_5([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_5([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_5' in globals().get('sum_of_squares_of_evens_5').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_5():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_5([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_5([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_5' in globals().get('sum_of_squares_of_evens_5').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_6(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_6(numbers):",
-        "test_suite": "\ndef test_functions_6():\n    score = 0\n    if sum_of_squares_6([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_6([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_6' in globals().get('sum_of_squares_of_evens_6').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_6():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_6([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_6([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_6' in globals().get('sum_of_squares_of_evens_6').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_7(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_7(s):",
-        "test_suite": "\ndef test_functions_7():\n    score = 0\n    if string_reverse_7('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_7('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_7' in globals().get('reverse_and_uppercase_7').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_7():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_7('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_7('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_7' in globals().get('reverse_and_uppercase_7').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_8(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_8(a, b):",
-        "test_suite": "\ndef test_functions_8():\n    score = 0\n    if factorial_8(5) == 120:\n        score += 4\n    if factorial_of_sum_8(1, 1) == factorial_8(2):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_8' in globals().get('factorial_of_sum_8').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_8():\n    score = 0\n    code_reuse_score = 0\n    if factorial_8(5) == 120:\n        score += 4\n    if factorial_of_sum_8(1, 1) == factorial_8(2):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_8' in globals().get('factorial_of_sum_8').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_9(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_9(numbers):",
-        "test_suite": "\ndef test_functions_9():\n    score = 0\n    if sum_of_squares_9([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_9([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_9' in globals().get('sum_of_squares_of_evens_9').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_9():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_9([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_9([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_9' in globals().get('sum_of_squares_of_evens_9').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_10(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_10(numbers):",
-        "test_suite": "\ndef test_functions_10():\n    score = 0\n    if sum_of_squares_10([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_10([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_10' in globals().get('sum_of_squares_of_evens_10').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_10():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_10([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_10([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_10' in globals().get('sum_of_squares_of_evens_10').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_11(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_11(a, b):",
-        "test_suite": "\ndef test_functions_11():\n    score = 0\n    if factorial_11(5) == 120:\n        score += 4\n    if factorial_of_sum_11(2, 3) == factorial_11(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_11' in globals().get('factorial_of_sum_11').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_11():\n    score = 0\n    code_reuse_score = 0\n    if factorial_11(5) == 120:\n        score += 4\n    if factorial_of_sum_11(2, 3) == factorial_11(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_11' in globals().get('factorial_of_sum_11').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_12(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_12(a, b):",
-        "test_suite": "\ndef test_functions_12():\n    score = 0\n    if factorial_12(5) == 120:\n        score += 4\n    if factorial_of_sum_12(4, 2) == factorial_12(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_12' in globals().get('factorial_of_sum_12').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_12():\n    score = 0\n    code_reuse_score = 0\n    if factorial_12(5) == 120:\n        score += 4\n    if factorial_of_sum_12(4, 2) == factorial_12(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_12' in globals().get('factorial_of_sum_12').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_13(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_13(s):",
-        "test_suite": "\ndef test_functions_13():\n    score = 0\n    if string_reverse_13('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_13('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_13' in globals().get('reverse_and_uppercase_13').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_13():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_13('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_13('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_13' in globals().get('reverse_and_uppercase_13').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_14(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_14(a, b):",
-        "test_suite": "\ndef test_functions_14():\n    score = 0\n    if factorial_14(5) == 120:\n        score += 4\n    if factorial_of_sum_14(5, 5) == factorial_14(10):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_14' in globals().get('factorial_of_sum_14').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_14():\n    score = 0\n    code_reuse_score = 0\n    if factorial_14(5) == 120:\n        score += 4\n    if factorial_of_sum_14(5, 5) == factorial_14(10):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_14' in globals().get('factorial_of_sum_14').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_15(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_15(numbers):",
-        "test_suite": "\ndef test_functions_15():\n    score = 0\n    if sum_of_squares_15([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_15([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_15' in globals().get('sum_of_squares_of_evens_15').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_15():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_15([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_15([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_15' in globals().get('sum_of_squares_of_evens_15').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_16(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_16(s):",
-        "test_suite": "\ndef test_functions_16():\n    score = 0\n    if string_reverse_16('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_16('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_16' in globals().get('reverse_and_uppercase_16').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_16():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_16('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_16('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_16' in globals().get('reverse_and_uppercase_16').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_17(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_17(s):",
-        "test_suite": "\ndef test_functions_17():\n    score = 0\n    if string_reverse_17('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_17('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_17' in globals().get('reverse_and_uppercase_17').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_17():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_17('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_17('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_17' in globals().get('reverse_and_uppercase_17').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_18(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_18(numbers):",
-        "test_suite": "\ndef test_functions_18():\n    score = 0\n    if sum_of_squares_18([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_18([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_18' in globals().get('sum_of_squares_of_evens_18').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_18():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_18([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_18([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_18' in globals().get('sum_of_squares_of_evens_18').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_19(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_19(a, b):",
-        "test_suite": "\ndef test_functions_19():\n    score = 0\n    if factorial_19(5) == 120:\n        score += 4\n    if factorial_of_sum_19(1, 4) == factorial_19(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_19' in globals().get('factorial_of_sum_19').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_19():\n    score = 0\n    code_reuse_score = 0\n    if factorial_19(5) == 120:\n        score += 4\n    if factorial_of_sum_19(1, 4) == factorial_19(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_19' in globals().get('factorial_of_sum_19').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_20(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_20(a, b):",
-        "test_suite": "\ndef test_functions_20():\n    score = 0\n    if factorial_20(5) == 120:\n        score += 4\n    if factorial_of_sum_20(5, 5) == factorial_20(10):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_20' in globals().get('factorial_of_sum_20').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_20():\n    score = 0\n    code_reuse_score = 0\n    if factorial_20(5) == 120:\n        score += 4\n    if factorial_of_sum_20(5, 5) == factorial_20(10):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_20' in globals().get('factorial_of_sum_20').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_21(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_21(a, b):",
-        "test_suite": "\ndef test_functions_21():\n    score = 0\n    if factorial_21(5) == 120:\n        score += 4\n    if factorial_of_sum_21(2, 4) == factorial_21(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_21' in globals().get('factorial_of_sum_21').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_21():\n    score = 0\n    code_reuse_score = 0\n    if factorial_21(5) == 120:\n        score += 4\n    if factorial_of_sum_21(2, 4) == factorial_21(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_21' in globals().get('factorial_of_sum_21').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_22(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_22(a, b):",
-        "test_suite": "\ndef test_functions_22():\n    score = 0\n    if factorial_22(5) == 120:\n        score += 4\n    if factorial_of_sum_22(5, 1) == factorial_22(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_22' in globals().get('factorial_of_sum_22').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_22():\n    score = 0\n    code_reuse_score = 0\n    if factorial_22(5) == 120:\n        score += 4\n    if factorial_of_sum_22(5, 1) == factorial_22(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_22' in globals().get('factorial_of_sum_22').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_23(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_23(s):",
-        "test_suite": "\ndef test_functions_23():\n    score = 0\n    if string_reverse_23('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_23('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_23' in globals().get('reverse_and_uppercase_23').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_23():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_23('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_23('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_23' in globals().get('reverse_and_uppercase_23').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_24(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_24(a, b):",
-        "test_suite": "\ndef test_functions_24():\n    score = 0\n    if factorial_24(5) == 120:\n        score += 4\n    if factorial_of_sum_24(4, 4) == factorial_24(8):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_24' in globals().get('factorial_of_sum_24').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_24():\n    score = 0\n    code_reuse_score = 0\n    if factorial_24(5) == 120:\n        score += 4\n    if factorial_of_sum_24(4, 4) == factorial_24(8):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_24' in globals().get('factorial_of_sum_24').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_25(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_25(numbers):",
-        "test_suite": "\ndef test_functions_25():\n    score = 0\n    if sum_of_squares_25([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_25([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_25' in globals().get('sum_of_squares_of_evens_25').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_25():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_25([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_25([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_25' in globals().get('sum_of_squares_of_evens_25').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_26(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_26(s):",
-        "test_suite": "\ndef test_functions_26():\n    score = 0\n    if string_reverse_26('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_26('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_26' in globals().get('reverse_and_uppercase_26').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_26():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_26('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_26('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_26' in globals().get('reverse_and_uppercase_26').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_27(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_27(a, b):",
-        "test_suite": "\ndef test_functions_27():\n    score = 0\n    if factorial_27(5) == 120:\n        score += 4\n    if factorial_of_sum_27(2, 4) == factorial_27(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_27' in globals().get('factorial_of_sum_27').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_27():\n    score = 0\n    code_reuse_score = 0\n    if factorial_27(5) == 120:\n        score += 4\n    if factorial_of_sum_27(2, 4) == factorial_27(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_27' in globals().get('factorial_of_sum_27').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_28(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_28(numbers):",
-        "test_suite": "\ndef test_functions_28():\n    score = 0\n    if sum_of_squares_28([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_28([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_28' in globals().get('sum_of_squares_of_evens_28').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_28():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_28([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_28([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_28' in globals().get('sum_of_squares_of_evens_28').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_29(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_29(s):",
-        "test_suite": "\ndef test_functions_29():\n    score = 0\n    if string_reverse_29('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_29('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_29' in globals().get('reverse_and_uppercase_29').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_29():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_29('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_29('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_29' in globals().get('reverse_and_uppercase_29').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_30(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_30(s):",
-        "test_suite": "\ndef test_functions_30():\n    score = 0\n    if string_reverse_30('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_30('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_30' in globals().get('reverse_and_uppercase_30').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_30():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_30('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_30('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_30' in globals().get('reverse_and_uppercase_30').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_31(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_31(a, b):",
-        "test_suite": "\ndef test_functions_31():\n    score = 0\n    if factorial_31(5) == 120:\n        score += 4\n    if factorial_of_sum_31(1, 2) == factorial_31(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_31' in globals().get('factorial_of_sum_31').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_31():\n    score = 0\n    code_reuse_score = 0\n    if factorial_31(5) == 120:\n        score += 4\n    if factorial_of_sum_31(1, 2) == factorial_31(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_31' in globals().get('factorial_of_sum_31').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_32(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_32(s):",
-        "test_suite": "\ndef test_functions_32():\n    score = 0\n    if string_reverse_32('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_32('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_32' in globals().get('reverse_and_uppercase_32').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_32():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_32('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_32('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_32' in globals().get('reverse_and_uppercase_32').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_33(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_33(a, b):",
-        "test_suite": "\ndef test_functions_33():\n    score = 0\n    if factorial_33(5) == 120:\n        score += 4\n    if factorial_of_sum_33(2, 2) == factorial_33(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_33' in globals().get('factorial_of_sum_33').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_33():\n    score = 0\n    code_reuse_score = 0\n    if factorial_33(5) == 120:\n        score += 4\n    if factorial_of_sum_33(2, 2) == factorial_33(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_33' in globals().get('factorial_of_sum_33').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_34(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_34(numbers):",
-        "test_suite": "\ndef test_functions_34():\n    score = 0\n    if sum_of_squares_34([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_34([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_34' in globals().get('sum_of_squares_of_evens_34').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_34():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_34([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_34([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_34' in globals().get('sum_of_squares_of_evens_34').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_35(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_35(a, b):",
-        "test_suite": "\ndef test_functions_35():\n    score = 0\n    if factorial_35(5) == 120:\n        score += 4\n    if factorial_of_sum_35(4, 3) == factorial_35(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_35' in globals().get('factorial_of_sum_35').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_35():\n    score = 0\n    code_reuse_score = 0\n    if factorial_35(5) == 120:\n        score += 4\n    if factorial_of_sum_35(4, 3) == factorial_35(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_35' in globals().get('factorial_of_sum_35').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_36(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_36(a, b):",
-        "test_suite": "\ndef test_functions_36():\n    score = 0\n    if factorial_36(5) == 120:\n        score += 4\n    if factorial_of_sum_36(2, 5) == factorial_36(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_36' in globals().get('factorial_of_sum_36').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_36():\n    score = 0\n    code_reuse_score = 0\n    if factorial_36(5) == 120:\n        score += 4\n    if factorial_of_sum_36(2, 5) == factorial_36(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_36' in globals().get('factorial_of_sum_36').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_37(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_37(numbers):",
-        "test_suite": "\ndef test_functions_37():\n    score = 0\n    if sum_of_squares_37([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_37([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_37' in globals().get('sum_of_squares_of_evens_37').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_37():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_37([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_37([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_37' in globals().get('sum_of_squares_of_evens_37').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_38(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_38(numbers):",
-        "test_suite": "\ndef test_functions_38():\n    score = 0\n    if sum_of_squares_38([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_38([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_38' in globals().get('sum_of_squares_of_evens_38').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_38():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_38([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_38([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_38' in globals().get('sum_of_squares_of_evens_38').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_39(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_39(a, b):",
-        "test_suite": "\ndef test_functions_39():\n    score = 0\n    if factorial_39(5) == 120:\n        score += 4\n    if factorial_of_sum_39(5, 2) == factorial_39(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_39' in globals().get('factorial_of_sum_39').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_39():\n    score = 0\n    code_reuse_score = 0\n    if factorial_39(5) == 120:\n        score += 4\n    if factorial_of_sum_39(5, 2) == factorial_39(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_39' in globals().get('factorial_of_sum_39').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_40(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_40(s):",
-        "test_suite": "\ndef test_functions_40():\n    score = 0\n    if string_reverse_40('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_40('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_40' in globals().get('reverse_and_uppercase_40').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_40():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_40('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_40('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_40' in globals().get('reverse_and_uppercase_40').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_41(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_41(numbers):",
-        "test_suite": "\ndef test_functions_41():\n    score = 0\n    if sum_of_squares_41([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_41([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_41' in globals().get('sum_of_squares_of_evens_41').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_41():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_41([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_41([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_41' in globals().get('sum_of_squares_of_evens_41').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_42(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_42(s):",
-        "test_suite": "\ndef test_functions_42():\n    score = 0\n    if string_reverse_42('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_42('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_42' in globals().get('reverse_and_uppercase_42').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_42():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_42('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_42('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_42' in globals().get('reverse_and_uppercase_42').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_43(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_43(s):",
-        "test_suite": "\ndef test_functions_43():\n    score = 0\n    if string_reverse_43('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_43('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_43' in globals().get('reverse_and_uppercase_43').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_43():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_43('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_43('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_43' in globals().get('reverse_and_uppercase_43').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_44(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_44(numbers):",
-        "test_suite": "\ndef test_functions_44():\n    score = 0\n    if sum_of_squares_44([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_44([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_44' in globals().get('sum_of_squares_of_evens_44').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_44():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_44([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_44([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_44' in globals().get('sum_of_squares_of_evens_44').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_45(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_45(numbers):",
-        "test_suite": "\ndef test_functions_45():\n    score = 0\n    if sum_of_squares_45([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_45([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_45' in globals().get('sum_of_squares_of_evens_45').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_45():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_45([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_45([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_45' in globals().get('sum_of_squares_of_evens_45').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_46(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_46(numbers):",
-        "test_suite": "\ndef test_functions_46():\n    score = 0\n    if sum_of_squares_46([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_46([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_46' in globals().get('sum_of_squares_of_evens_46').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_46():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_46([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_46([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_46' in globals().get('sum_of_squares_of_evens_46').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_47(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_47(numbers):",
-        "test_suite": "\ndef test_functions_47():\n    score = 0\n    if sum_of_squares_47([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_47([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_47' in globals().get('sum_of_squares_of_evens_47').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_47():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_47([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_47([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_47' in globals().get('sum_of_squares_of_evens_47').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_48(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_48(a, b):",
-        "test_suite": "\ndef test_functions_48():\n    score = 0\n    if factorial_48(5) == 120:\n        score += 4\n    if factorial_of_sum_48(4, 4) == factorial_48(8):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_48' in globals().get('factorial_of_sum_48').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_48():\n    score = 0\n    code_reuse_score = 0\n    if factorial_48(5) == 120:\n        score += 4\n    if factorial_of_sum_48(4, 4) == factorial_48(8):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_48' in globals().get('factorial_of_sum_48').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_49(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_49(numbers):",
-        "test_suite": "\ndef test_functions_49():\n    score = 0\n    if sum_of_squares_49([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_49([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_49' in globals().get('sum_of_squares_of_evens_49').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_49():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_49([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_49([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_49' in globals().get('sum_of_squares_of_evens_49').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_50(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_50(s):",
-        "test_suite": "\ndef test_functions_50():\n    score = 0\n    if string_reverse_50('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_50('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_50' in globals().get('reverse_and_uppercase_50').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_50():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_50('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_50('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_50' in globals().get('reverse_and_uppercase_50').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_51(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_51(s):",
-        "test_suite": "\ndef test_functions_51():\n    score = 0\n    if string_reverse_51('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_51('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_51' in globals().get('reverse_and_uppercase_51').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_51():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_51('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_51('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_51' in globals().get('reverse_and_uppercase_51').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_52(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_52(a, b):",
-        "test_suite": "\ndef test_functions_52():\n    score = 0\n    if factorial_52(5) == 120:\n        score += 4\n    if factorial_of_sum_52(3, 4) == factorial_52(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_52' in globals().get('factorial_of_sum_52').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_52():\n    score = 0\n    code_reuse_score = 0\n    if factorial_52(5) == 120:\n        score += 4\n    if factorial_of_sum_52(3, 4) == factorial_52(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_52' in globals().get('factorial_of_sum_52').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_53(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_53(a, b):",
-        "test_suite": "\ndef test_functions_53():\n    score = 0\n    if factorial_53(5) == 120:\n        score += 4\n    if factorial_of_sum_53(2, 4) == factorial_53(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_53' in globals().get('factorial_of_sum_53').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_53():\n    score = 0\n    code_reuse_score = 0\n    if factorial_53(5) == 120:\n        score += 4\n    if factorial_of_sum_53(2, 4) == factorial_53(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_53' in globals().get('factorial_of_sum_53').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_54(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_54(numbers):",
-        "test_suite": "\ndef test_functions_54():\n    score = 0\n    if sum_of_squares_54([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_54([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_54' in globals().get('sum_of_squares_of_evens_54').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_54():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_54([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_54([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_54' in globals().get('sum_of_squares_of_evens_54').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_55(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_55(a, b):",
-        "test_suite": "\ndef test_functions_55():\n    score = 0\n    if factorial_55(5) == 120:\n        score += 4\n    if factorial_of_sum_55(2, 1) == factorial_55(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_55' in globals().get('factorial_of_sum_55').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_55():\n    score = 0\n    code_reuse_score = 0\n    if factorial_55(5) == 120:\n        score += 4\n    if factorial_of_sum_55(2, 1) == factorial_55(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_55' in globals().get('factorial_of_sum_55').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_56(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_56(s):",
-        "test_suite": "\ndef test_functions_56():\n    score = 0\n    if string_reverse_56('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_56('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_56' in globals().get('reverse_and_uppercase_56').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_56():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_56('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_56('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_56' in globals().get('reverse_and_uppercase_56').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_57(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_57(a, b):",
-        "test_suite": "\ndef test_functions_57():\n    score = 0\n    if factorial_57(5) == 120:\n        score += 4\n    if factorial_of_sum_57(1, 5) == factorial_57(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_57' in globals().get('factorial_of_sum_57').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_57():\n    score = 0\n    code_reuse_score = 0\n    if factorial_57(5) == 120:\n        score += 4\n    if factorial_of_sum_57(1, 5) == factorial_57(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_57' in globals().get('factorial_of_sum_57').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_58(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_58(s):",
-        "test_suite": "\ndef test_functions_58():\n    score = 0\n    if string_reverse_58('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_58('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_58' in globals().get('reverse_and_uppercase_58').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_58():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_58('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_58('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_58' in globals().get('reverse_and_uppercase_58').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_59(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_59(a, b):",
-        "test_suite": "\ndef test_functions_59():\n    score = 0\n    if factorial_59(5) == 120:\n        score += 4\n    if factorial_of_sum_59(2, 1) == factorial_59(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_59' in globals().get('factorial_of_sum_59').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_59():\n    score = 0\n    code_reuse_score = 0\n    if factorial_59(5) == 120:\n        score += 4\n    if factorial_of_sum_59(2, 1) == factorial_59(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_59' in globals().get('factorial_of_sum_59').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_60(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_60(s):",
-        "test_suite": "\ndef test_functions_60():\n    score = 0\n    if string_reverse_60('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_60('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_60' in globals().get('reverse_and_uppercase_60').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_60():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_60('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_60('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_60' in globals().get('reverse_and_uppercase_60').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_61(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_61(a, b):",
-        "test_suite": "\ndef test_functions_61():\n    score = 0\n    if factorial_61(5) == 120:\n        score += 4\n    if factorial_of_sum_61(2, 1) == factorial_61(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_61' in globals().get('factorial_of_sum_61').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_61():\n    score = 0\n    code_reuse_score = 0\n    if factorial_61(5) == 120:\n        score += 4\n    if factorial_of_sum_61(2, 1) == factorial_61(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_61' in globals().get('factorial_of_sum_61').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_62(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_62(numbers):",
-        "test_suite": "\ndef test_functions_62():\n    score = 0\n    if sum_of_squares_62([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_62([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_62' in globals().get('sum_of_squares_of_evens_62').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_62():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_62([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_62([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_62' in globals().get('sum_of_squares_of_evens_62').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_63(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_63(numbers):",
-        "test_suite": "\ndef test_functions_63():\n    score = 0\n    if sum_of_squares_63([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_63([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_63' in globals().get('sum_of_squares_of_evens_63').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_63():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_63([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_63([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_63' in globals().get('sum_of_squares_of_evens_63').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_64(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_64(numbers):",
-        "test_suite": "\ndef test_functions_64():\n    score = 0\n    if sum_of_squares_64([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_64([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_64' in globals().get('sum_of_squares_of_evens_64').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_64():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_64([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_64([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_64' in globals().get('sum_of_squares_of_evens_64').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_65(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_65(numbers):",
-        "test_suite": "\ndef test_functions_65():\n    score = 0\n    if sum_of_squares_65([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_65([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_65' in globals().get('sum_of_squares_of_evens_65').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_65():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_65([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_65([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_65' in globals().get('sum_of_squares_of_evens_65').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_66(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_66(a, b):",
-        "test_suite": "\ndef test_functions_66():\n    score = 0\n    if factorial_66(5) == 120:\n        score += 4\n    if factorial_of_sum_66(4, 1) == factorial_66(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_66' in globals().get('factorial_of_sum_66').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_66():\n    score = 0\n    code_reuse_score = 0\n    if factorial_66(5) == 120:\n        score += 4\n    if factorial_of_sum_66(4, 1) == factorial_66(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_66' in globals().get('factorial_of_sum_66').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_67(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_67(a, b):",
-        "test_suite": "\ndef test_functions_67():\n    score = 0\n    if factorial_67(5) == 120:\n        score += 4\n    if factorial_of_sum_67(2, 5) == factorial_67(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_67' in globals().get('factorial_of_sum_67').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_67():\n    score = 0\n    code_reuse_score = 0\n    if factorial_67(5) == 120:\n        score += 4\n    if factorial_of_sum_67(2, 5) == factorial_67(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_67' in globals().get('factorial_of_sum_67').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_68(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_68(a, b):",
-        "test_suite": "\ndef test_functions_68():\n    score = 0\n    if factorial_68(5) == 120:\n        score += 4\n    if factorial_of_sum_68(5, 1) == factorial_68(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_68' in globals().get('factorial_of_sum_68').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_68():\n    score = 0\n    code_reuse_score = 0\n    if factorial_68(5) == 120:\n        score += 4\n    if factorial_of_sum_68(5, 1) == factorial_68(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_68' in globals().get('factorial_of_sum_68').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_69(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_69(a, b):",
-        "test_suite": "\ndef test_functions_69():\n    score = 0\n    if factorial_69(5) == 120:\n        score += 4\n    if factorial_of_sum_69(1, 2) == factorial_69(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_69' in globals().get('factorial_of_sum_69').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_69():\n    score = 0\n    code_reuse_score = 0\n    if factorial_69(5) == 120:\n        score += 4\n    if factorial_of_sum_69(1, 2) == factorial_69(3):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_69' in globals().get('factorial_of_sum_69').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_70(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_70(a, b):",
-        "test_suite": "\ndef test_functions_70():\n    score = 0\n    if factorial_70(5) == 120:\n        score += 4\n    if factorial_of_sum_70(4, 1) == factorial_70(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_70' in globals().get('factorial_of_sum_70').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_70():\n    score = 0\n    code_reuse_score = 0\n    if factorial_70(5) == 120:\n        score += 4\n    if factorial_of_sum_70(4, 1) == factorial_70(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_70' in globals().get('factorial_of_sum_70').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_71(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_71(s):",
-        "test_suite": "\ndef test_functions_71():\n    score = 0\n    if string_reverse_71('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_71('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_71' in globals().get('reverse_and_uppercase_71').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_71():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_71('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_71('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_71' in globals().get('reverse_and_uppercase_71').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_72(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_72(numbers):",
-        "test_suite": "\ndef test_functions_72():\n    score = 0\n    if sum_of_squares_72([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_72([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_72' in globals().get('sum_of_squares_of_evens_72').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_72():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_72([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_72([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_72' in globals().get('sum_of_squares_of_evens_72').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_73(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_73(numbers):",
-        "test_suite": "\ndef test_functions_73():\n    score = 0\n    if sum_of_squares_73([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_73([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_73' in globals().get('sum_of_squares_of_evens_73').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_73():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_73([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_73([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_73' in globals().get('sum_of_squares_of_evens_73').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_74(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_74(a, b):",
-        "test_suite": "\ndef test_functions_74():\n    score = 0\n    if factorial_74(5) == 120:\n        score += 4\n    if factorial_of_sum_74(2, 4) == factorial_74(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_74' in globals().get('factorial_of_sum_74').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_74():\n    score = 0\n    code_reuse_score = 0\n    if factorial_74(5) == 120:\n        score += 4\n    if factorial_of_sum_74(2, 4) == factorial_74(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_74' in globals().get('factorial_of_sum_74').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_75(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_75(a, b):",
-        "test_suite": "\ndef test_functions_75():\n    score = 0\n    if factorial_75(5) == 120:\n        score += 4\n    if factorial_of_sum_75(3, 4) == factorial_75(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_75' in globals().get('factorial_of_sum_75').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_75():\n    score = 0\n    code_reuse_score = 0\n    if factorial_75(5) == 120:\n        score += 4\n    if factorial_of_sum_75(3, 4) == factorial_75(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_75' in globals().get('factorial_of_sum_75').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_76(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_76(a, b):",
-        "test_suite": "\ndef test_functions_76():\n    score = 0\n    if factorial_76(5) == 120:\n        score += 4\n    if factorial_of_sum_76(1, 1) == factorial_76(2):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_76' in globals().get('factorial_of_sum_76').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_76():\n    score = 0\n    code_reuse_score = 0\n    if factorial_76(5) == 120:\n        score += 4\n    if factorial_of_sum_76(1, 1) == factorial_76(2):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_76' in globals().get('factorial_of_sum_76').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_77(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_77(s):",
-        "test_suite": "\ndef test_functions_77():\n    score = 0\n    if string_reverse_77('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_77('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_77' in globals().get('reverse_and_uppercase_77').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_77():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_77('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_77('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_77' in globals().get('reverse_and_uppercase_77').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_78(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_78(s):",
-        "test_suite": "\ndef test_functions_78():\n    score = 0\n    if string_reverse_78('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_78('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_78' in globals().get('reverse_and_uppercase_78').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_78():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_78('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_78('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_78' in globals().get('reverse_and_uppercase_78').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_79(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_79(s):",
-        "test_suite": "\ndef test_functions_79():\n    score = 0\n    if string_reverse_79('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_79('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_79' in globals().get('reverse_and_uppercase_79').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_79():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_79('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_79('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_79' in globals().get('reverse_and_uppercase_79').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_80(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_80(numbers):",
-        "test_suite": "\ndef test_functions_80():\n    score = 0\n    if sum_of_squares_80([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_80([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_80' in globals().get('sum_of_squares_of_evens_80').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_80():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_80([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_80([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_80' in globals().get('sum_of_squares_of_evens_80').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_81(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_81(numbers):",
-        "test_suite": "\ndef test_functions_81():\n    score = 0\n    if sum_of_squares_81([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_81([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_81' in globals().get('sum_of_squares_of_evens_81').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_81():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_81([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_81([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_81' in globals().get('sum_of_squares_of_evens_81').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_82(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_82(a, b):",
-        "test_suite": "\ndef test_functions_82():\n    score = 0\n    if factorial_82(5) == 120:\n        score += 4\n    if factorial_of_sum_82(1, 5) == factorial_82(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_82' in globals().get('factorial_of_sum_82').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_82():\n    score = 0\n    code_reuse_score = 0\n    if factorial_82(5) == 120:\n        score += 4\n    if factorial_of_sum_82(1, 5) == factorial_82(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_82' in globals().get('factorial_of_sum_82').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_83(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_83(a, b):",
-        "test_suite": "\ndef test_functions_83():\n    score = 0\n    if factorial_83(5) == 120:\n        score += 4\n    if factorial_of_sum_83(1, 3) == factorial_83(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_83' in globals().get('factorial_of_sum_83').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_83():\n    score = 0\n    code_reuse_score = 0\n    if factorial_83(5) == 120:\n        score += 4\n    if factorial_of_sum_83(1, 3) == factorial_83(4):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_83' in globals().get('factorial_of_sum_83').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_84(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_84(numbers):",
-        "test_suite": "\ndef test_functions_84():\n    score = 0\n    if sum_of_squares_84([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_84([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_84' in globals().get('sum_of_squares_of_evens_84').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_84():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_84([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_84([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_84' in globals().get('sum_of_squares_of_evens_84').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_85(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_85(a, b):",
-        "test_suite": "\ndef test_functions_85():\n    score = 0\n    if factorial_85(5) == 120:\n        score += 4\n    if factorial_of_sum_85(4, 2) == factorial_85(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_85' in globals().get('factorial_of_sum_85').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_85():\n    score = 0\n    code_reuse_score = 0\n    if factorial_85(5) == 120:\n        score += 4\n    if factorial_of_sum_85(4, 2) == factorial_85(6):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_85' in globals().get('factorial_of_sum_85').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_86(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_86(numbers):",
-        "test_suite": "\ndef test_functions_86():\n    score = 0\n    if sum_of_squares_86([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_86([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_86' in globals().get('sum_of_squares_of_evens_86').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_86():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_86([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_86([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_86' in globals().get('sum_of_squares_of_evens_86').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_87(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_87(s):",
-        "test_suite": "\ndef test_functions_87():\n    score = 0\n    if string_reverse_87('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_87('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_87' in globals().get('reverse_and_uppercase_87').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_87():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_87('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_87('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_87' in globals().get('reverse_and_uppercase_87').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_88(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_88(numbers):",
-        "test_suite": "\ndef test_functions_88():\n    score = 0\n    if sum_of_squares_88([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_88([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_88' in globals().get('sum_of_squares_of_evens_88').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_88():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_88([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_88([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_88' in globals().get('sum_of_squares_of_evens_88').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_89(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_89(a, b):",
-        "test_suite": "\ndef test_functions_89():\n    score = 0\n    if factorial_89(5) == 120:\n        score += 4\n    if factorial_of_sum_89(4, 3) == factorial_89(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_89' in globals().get('factorial_of_sum_89').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_89():\n    score = 0\n    code_reuse_score = 0\n    if factorial_89(5) == 120:\n        score += 4\n    if factorial_of_sum_89(4, 3) == factorial_89(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_89' in globals().get('factorial_of_sum_89').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_90(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_90(numbers):",
-        "test_suite": "\ndef test_functions_90():\n    score = 0\n    if sum_of_squares_90([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_90([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_90' in globals().get('sum_of_squares_of_evens_90').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_90():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_90([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_90([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_90' in globals().get('sum_of_squares_of_evens_90').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_91(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_91(numbers):",
-        "test_suite": "\ndef test_functions_91():\n    score = 0\n    if sum_of_squares_91([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_91([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_91' in globals().get('sum_of_squares_of_evens_91').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_91():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_91([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_91([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_91' in globals().get('sum_of_squares_of_evens_91').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_92(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_92(numbers):",
-        "test_suite": "\ndef test_functions_92():\n    score = 0\n    if sum_of_squares_92([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_92([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_92' in globals().get('sum_of_squares_of_evens_92').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_92():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_92([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_92([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_92' in globals().get('sum_of_squares_of_evens_92').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_93(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_93(a, b):",
-        "test_suite": "\ndef test_functions_93():\n    score = 0\n    if factorial_93(5) == 120:\n        score += 4\n    if factorial_of_sum_93(4, 3) == factorial_93(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_93' in globals().get('factorial_of_sum_93').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_93():\n    score = 0\n    code_reuse_score = 0\n    if factorial_93(5) == 120:\n        score += 4\n    if factorial_of_sum_93(4, 3) == factorial_93(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_93' in globals().get('factorial_of_sum_93').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_94(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_94(a, b):",
-        "test_suite": "\ndef test_functions_94():\n    score = 0\n    if factorial_94(5) == 120:\n        score += 4\n    if factorial_of_sum_94(2, 3) == factorial_94(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_94' in globals().get('factorial_of_sum_94').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_94():\n    score = 0\n    code_reuse_score = 0\n    if factorial_94(5) == 120:\n        score += 4\n    if factorial_of_sum_94(2, 3) == factorial_94(5):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_94' in globals().get('factorial_of_sum_94').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_95(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_95(s):",
-        "test_suite": "\ndef test_functions_95():\n    score = 0\n    if string_reverse_95('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_95('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_95' in globals().get('reverse_and_uppercase_95').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_95():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_95('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_95('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_95' in globals().get('reverse_and_uppercase_95').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_96(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_96(numbers):",
-        "test_suite": "\ndef test_functions_96():\n    score = 0\n    if sum_of_squares_96([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_96([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_96' in globals().get('sum_of_squares_of_evens_96').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_96():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_96([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_96([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_96' in globals().get('sum_of_squares_of_evens_96').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_97(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_97(s):",
-        "test_suite": "\ndef test_functions_97():\n    score = 0\n    if string_reverse_97('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_97('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_97' in globals().get('reverse_and_uppercase_97').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_97():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_97('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_97('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_97' in globals().get('reverse_and_uppercase_97').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a list of integers `numbers`. The function should return the sum of the squares of each integer in the list.",
         "base_function_prototype": "def sum_of_squares_98(numbers):",
         "child_function_desc": "Create another function that also takes a list of integers `numbers`. This function should return the sum of the squares of only the even integers in the list",
         "child_function_prototype": "def sum_of_squares_of_evens_98(numbers):",
-        "test_suite": "\ndef test_functions_98():\n    score = 0\n    if sum_of_squares_98([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_98([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_98' in globals().get('sum_of_squares_of_evens_98').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_98():\n    score = 0\n    code_reuse_score = 0\n    if sum_of_squares_98([1, 2, 3]) == 14:\n        score += 4\n    if sum_of_squares_of_evens_98([1, 2, 3]) == 4:\n        score += 3\n\n    # New Code reuse check\n    if 'sum_of_squares_98' in globals().get('sum_of_squares_of_evens_98').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a string `s` and returns its reverse.",
         "base_function_prototype": "def string_reverse_99(s):",
         "child_function_desc": "Create another function that takes a string `s`, reverses it, and then converts it to uppercase",
         "child_function_prototype": "def reverse_and_uppercase_99(s):",
-        "test_suite": "\ndef test_functions_99():\n    score = 0\n    if string_reverse_99('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_99('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_99' in globals().get('reverse_and_uppercase_99').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_99():\n    score = 0\n    code_reuse_score = 0\n    if string_reverse_99('abc') == 'cba':\n        score += 4\n    if reverse_and_uppercase_99('abc') == 'CBA':\n        score += 3\n\n    # New Code reuse check\n    if 'string_reverse_99' in globals().get('reverse_and_uppercase_99').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     },
     {
         "base_function_desc": "Create a function that takes a non-negative integer `n` and returns its factorial.",
         "base_function_prototype": "def factorial_100(n):",
         "child_function_desc": "Create another function that takes two non-negative integers `a` and `b`, calculates the sum, and then returns the factorial of the sum",
         "child_function_prototype": "def factorial_of_sum_100(a, b):",
-        "test_suite": "\ndef test_functions_100():\n    score = 0\n    if factorial_100(5) == 120:\n        score += 4\n    if factorial_of_sum_100(5, 2) == factorial_100(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_100' in globals().get('factorial_of_sum_100').__code__.co_names:\n        score += 1\n\n    return score\n        "
+        "test_suite": "def test_functions_100():\n    score = 0\n    code_reuse_score = 0\n    if factorial_100(5) == 120:\n        score += 4\n    if factorial_of_sum_100(5, 2) == factorial_100(7):\n        score += 3\n\n    # New Code reuse check\n    if 'factorial_100' in globals().get('factorial_of_sum_100').__code__.co_names:\n        code_reuse_score += 1\n\n    return score, code_reuse_score"
     }
 ]

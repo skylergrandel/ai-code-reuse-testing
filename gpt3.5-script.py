@@ -2,7 +2,7 @@ import openai
 import json
 
 # Your OpenAI API key here
-api_key = "Your API Key Here"
+api_key = "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"
 
 # Initialize the OpenAI API client
 openai.api_key = api_key
@@ -13,6 +13,7 @@ with open("code-reuse-problems-and-tests.json", "r") as f:
 
 # Initialize the total score
 total_score = 0
+total_reuse_score = 0
 
 # Iterate through each problem
 for i, problem in enumerate(problems):
@@ -23,7 +24,7 @@ for i, problem in enumerate(problems):
     test_suite = problem['test_suite']
     
     # Create the prompt for GPT-3.5-turbo
-    system_prompt = "You will act as a code generator. Generate Python code based on the function descriptions and prototypes provided. Assume that all functions are located in the same file. The output should be executable Python code only, without comments or extra text."
+    system_prompt = "You will act as a code generator. Generate Python code based on the function descriptions and prototypes provided. Assume that all functions are located in the same file and do not use any import statements. The output should be executable Python code only, without comments or extra text."
     prompt = f"{base_function_desc}\n\nPrototype: {base_function_prototype}\n\n{child_function_desc}\n\nPrototype: {child_function_prototype}"
     
     # Make the API call to get the code
@@ -36,6 +37,7 @@ for i, problem in enumerate(problems):
 
     # Initialize score for this problem
     score = 0
+    reuse_score = 0
     
     # Execute the generated code and the test suite
     try:
@@ -45,7 +47,7 @@ for i, problem in enumerate(problems):
         # Call the test function to get the score
         test_function_name = f"test_functions_{i+1}"
         if test_function_name in globals():
-            score = globals()[test_function_name]()
+            score, reuse_score = globals()[test_function_name]()
         else:
             print(f"Test function {test_function_name} not found.")
     except Exception as e:
@@ -53,8 +55,10 @@ for i, problem in enumerate(problems):
     
     # Update the total score
     total_score += score
+    total_reuse_score += reuse_score
 
-    print(f"Problem {i + 1} Test Results: Total score is {score}/8")
+    print(f"Problem {i + 1} Test Results: Total score is {score}/7, Reuse score is {reuse_score}/1")
 
 # Print the final total score
-print(f"Final Total Score: {total_score}/{8 * len(problems)}")
+print(f"Final Score: {total_score}/{7 * len(problems)}")
+print(f"Final Reuse Score: {total_reuse_score}/{len(problems)}")
